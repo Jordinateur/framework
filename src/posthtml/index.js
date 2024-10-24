@@ -90,7 +90,7 @@ export async function process(html = '', config = {}) {
     postcssPlugin,
     envTags(config.env),
     envAttributes(config.env),
-    ...get(config, 'posthtml.plugins.after', get(config, 'posthtml.plugins', []))
+    ...get(config, 'posthtml.plugins.after', [])
   ])
     .process(html, posthtmlOptions)
     .then(result => ({
